@@ -1,5 +1,5 @@
 <div align="center">
-<h1>pam-eslint-config</h1>
+<h1>@dream-lab-ai/pam-eslint-config</h1>
 
 <p>Shareable ESLint configuration for Pam AI projects - ESLint 9 Flat Config</p>
 </div>
@@ -56,7 +56,7 @@ The main export automatically detects your project setup and includes the approp
 **Create `eslint.config.mjs` in your project root:**
 
 ```javascript
-import pamConfig from 'pam-eslint-config';
+import pamConfig from '@dream-lab-ai/pam-eslint-config';
 
 export default [
   ...pamConfig,
@@ -81,9 +81,9 @@ The config will automatically include:
 You can also import specific presets for more control:
 
 ```javascript
-import baseConfig from 'pam-eslint-config/base';
-import reactConfig from 'pam-eslint-config/react';
-import vitestConfig from 'pam-eslint-config/vitest';
+import baseConfig from '@dream-lab-ai/pam-eslint-config/base';
+import reactConfig from '@dream-lab-ai/pam-eslint-config/react';
+import vitestConfig from '@dream-lab-ai/pam-eslint-config/vitest';
 
 export default [
   ...baseConfig,
@@ -104,7 +104,7 @@ export default [
 Core JavaScript and TypeScript linting rules.
 
 ```javascript
-import baseConfig from 'pam-eslint-config/base';
+import baseConfig from '@dream-lab-ai/pam-eslint-config/base';
 ```
 
 **Includes:**
@@ -120,7 +120,7 @@ import baseConfig from 'pam-eslint-config/base';
 React and JSX specific rules.
 
 ```javascript
-import reactConfig from 'pam-eslint-config/react';
+import reactConfig from '@dream-lab-ai/pam-eslint-config/react';
 ```
 
 **Includes:**
@@ -135,7 +135,7 @@ import reactConfig from 'pam-eslint-config/react';
 Testing rules for Vitest test files.
 
 ```javascript
-import vitestConfig from 'pam-eslint-config/vitest';
+import vitestConfig from '@dream-lab-ai/pam-eslint-config/vitest';
 ```
 
 **Applies to:**
@@ -148,7 +148,7 @@ import vitestConfig from 'pam-eslint-config/vitest';
 React Testing Library best practices.
 
 ```javascript
-import testingLibraryConfig from 'pam-eslint-config/testingLibrary';
+import testingLibraryConfig from '@dream-lab-ai/pam-eslint-config/testingLibrary';
 ```
 
 Use with React + Testing Library projects.
@@ -158,7 +158,7 @@ Use with React + Testing Library projects.
 ### Next.js Project
 
 ```javascript
-import pamConfig from 'pam-eslint-config';
+import pamConfig from '@dream-lab-ai/pam-eslint-config';
 
 export default [
   ...pamConfig,
@@ -176,7 +176,7 @@ export default [
 ### TypeScript Library
 
 ```javascript
-import baseConfig from 'pam-eslint-config/base';
+import baseConfig from '@dream-lab-ai/pam-eslint-config/base';
 
 export default [
   ...baseConfig,
@@ -193,7 +193,7 @@ export default [
 ### React + Vitest Project
 
 ```javascript
-import pamConfig from 'pam-eslint-config';
+import pamConfig from '@dream-lab-ai/pam-eslint-config';
 
 export default [
   ...pamConfig,
@@ -221,7 +221,7 @@ If you're upgrading from an older version of this config:
 3. **Create `eslint.config.mjs`:**
 
    ```javascript
-   import pamConfig from 'pam-eslint-config';
+   import pamConfig from '@dream-lab-ai/pam-eslint-config';
 
    export default pamConfig;
    ```
@@ -265,7 +265,7 @@ This package also exports a Prettier configuration.
 ```json
 {
   "name": "my-project",
-  "prettier": "pam-eslint-config/prettierConfig"
+  "prettier": "@dream-lab-ai/pam-eslint-config/prettierConfig"
 }
 ```
 
@@ -273,7 +273,7 @@ This package also exports a Prettier configuration.
 
 ```javascript
 module.exports = {
-  ...require('pam-eslint-config/prettierConfig'),
+  ...require('@dream-lab-ai/pam-eslint-config/prettierConfig'),
   // Your overrides
 };
 ```
