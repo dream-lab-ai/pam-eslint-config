@@ -51,10 +51,7 @@ module.exports = [
       'react/no-unescaped-entities': 'warn',
       'react/no-unknown-property': 'error',
       'react/self-closing-comp': 'warn',
-      'react/function-component-definition': [
-        'error',
-        { namedComponents: 'arrow-function' },
-      ],
+      'react/function-component-definition': ['error', { namedComponents: 'arrow-function' }],
       'react/jsx-filename-extension': ['error', { extensions: ['.jsx', '.tsx'] }],
       'react/jsx-one-expression-per-line': 'off',
       'react/jsx-props-no-spreading': 'off',

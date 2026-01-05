@@ -1,5 +1,5 @@
 <div align="center">
-<h1>@dream-lab-ai/pam-eslint-config</h1>
+<h1>pam-eslint-config</h1>
 
 <p>Shareable ESLint configuration for Pam AI projects - ESLint 9 Flat Config</p>
 </div>
@@ -30,14 +30,21 @@ This package provides Pam AI's ESLint configuration using the modern ESLint 9 fl
 **Node.js**: >=18 (tested on v22.14.0)
 
 **Required peer dependencies**:
+
 - `eslint` >= 9.0.0
 
 ## Installation
 
-Install this package as a `devDependency`:
+Install this package directly from GitHub as a `devDependency`:
 
 ```bash
-npm install --save-dev @dream-lab-ai/pam-eslint-config eslint
+npm install --save-dev github:dream-lab-ai/pam-eslint-config eslint
+```
+
+Or using a specific version/tag:
+
+```bash
+npm install --save-dev dream-lab-ai/pam-eslint-config#v2.0.0 eslint
 ```
 
 ## Usage
@@ -49,7 +56,7 @@ The main export automatically detects your project setup and includes the approp
 **Create `eslint.config.mjs` in your project root:**
 
 ```javascript
-import pamConfig from '@dream-lab-ai/pam-eslint-config';
+import pamConfig from 'pam-eslint-config';
 
 export default [
   ...pamConfig,
@@ -63,6 +70,7 @@ export default [
 ```
 
 The config will automatically include:
+
 - ✅ Base config (always included)
 - ✅ Vitest config (if `vitest` is installed)
 - ✅ React config (if `react` is installed)
@@ -73,9 +81,9 @@ The config will automatically include:
 You can also import specific presets for more control:
 
 ```javascript
-import baseConfig from '@dream-lab-ai/pam-eslint-config/base';
-import reactConfig from '@dream-lab-ai/pam-eslint-config/react';
-import vitestConfig from '@dream-lab-ai/pam-eslint-config/vitest';
+import baseConfig from 'pam-eslint-config/base';
+import reactConfig from 'pam-eslint-config/react';
+import vitestConfig from 'pam-eslint-config/vitest';
 
 export default [
   ...baseConfig,
@@ -96,10 +104,11 @@ export default [
 Core JavaScript and TypeScript linting rules.
 
 ```javascript
-import baseConfig from '@dream-lab-ai/pam-eslint-config/base';
+import baseConfig from 'pam-eslint-config/base';
 ```
 
 **Includes:**
+
 - TypeScript support with `@typescript-eslint`
 - Prettier integration
 - Import ordering
@@ -111,10 +120,11 @@ import baseConfig from '@dream-lab-ai/pam-eslint-config/base';
 React and JSX specific rules.
 
 ```javascript
-import reactConfig from '@dream-lab-ai/pam-eslint-config/react';
+import reactConfig from 'pam-eslint-config/react';
 ```
 
 **Includes:**
+
 - React 19+ support (no React import needed)
 - React Hooks rules
 - JSX accessibility (a11y) warnings
@@ -125,10 +135,11 @@ import reactConfig from '@dream-lab-ai/pam-eslint-config/react';
 Testing rules for Vitest test files.
 
 ```javascript
-import vitestConfig from '@dream-lab-ai/pam-eslint-config/vitest';
+import vitestConfig from 'pam-eslint-config/vitest';
 ```
 
 **Applies to:**
+
 - `**/__tests__/**/*.[jt]s?(x)`
 - `**/?(*.)+(spec|test).[jt]s?(x)`
 
@@ -137,7 +148,7 @@ import vitestConfig from '@dream-lab-ai/pam-eslint-config/vitest';
 React Testing Library best practices.
 
 ```javascript
-import testingLibraryConfig from '@dream-lab-ai/pam-eslint-config/testingLibrary';
+import testingLibraryConfig from 'pam-eslint-config/testingLibrary';
 ```
 
 Use with React + Testing Library projects.
@@ -147,7 +158,7 @@ Use with React + Testing Library projects.
 ### Next.js Project
 
 ```javascript
-import pamConfig from '@dream-lab-ai/pam-eslint-config';
+import pamConfig from 'pam-eslint-config';
 
 export default [
   ...pamConfig,
@@ -165,7 +176,7 @@ export default [
 ### TypeScript Library
 
 ```javascript
-import baseConfig from '@dream-lab-ai/pam-eslint-config/base';
+import baseConfig from 'pam-eslint-config/base';
 
 export default [
   ...baseConfig,
@@ -182,7 +193,7 @@ export default [
 ### React + Vitest Project
 
 ```javascript
-import pamConfig from '@dream-lab-ai/pam-eslint-config';
+import pamConfig from 'pam-eslint-config';
 
 export default [
   ...pamConfig,
@@ -199,6 +210,7 @@ export default [
 If you're upgrading from an older version of this config:
 
 1. **Update ESLint:**
+
    ```bash
    npm install --save-dev eslint@^9.0.0
    ```
@@ -207,13 +219,15 @@ If you're upgrading from an older version of this config:
    - Remove `.eslintrc.js`, `.eslintrc.json`, or `.eslintrc.yml`
 
 3. **Create `eslint.config.mjs`:**
+
    ```javascript
-   import pamConfig from '@dream-lab-ai/pam-eslint-config';
-   
+   import pamConfig from 'pam-eslint-config';
+
    export default pamConfig;
    ```
 
 4. **Update package.json scripts:**
+
    ```json
    {
      "scripts": {
@@ -251,7 +265,7 @@ This package also exports a Prettier configuration.
 ```json
 {
   "name": "my-project",
-  "prettier": "@dream-lab-ai/pam-eslint-config/prettierConfig"
+  "prettier": "pam-eslint-config/prettierConfig"
 }
 ```
 
@@ -259,26 +273,32 @@ This package also exports a Prettier configuration.
 
 ```javascript
 module.exports = {
-  ...require('@dream-lab-ai/pam-eslint-config/prettierConfig'),
+  ...require('pam-eslint-config/prettierConfig'),
   // Your overrides
 };
 ```
 
 ## Publishing This Package
 
-To publish a new version:
+This package is installed directly from GitHub. To release a new version:
 
 1. **Update version in `package.json`**
-2. **Login to npm (first time only):**
+2. **Commit your changes:**
    ```bash
-   npm login
+   git add .
+   git commit -m "Release v2.0.0"
    ```
-3. **Publish to npm:**
+3. **Create a git tag:**
    ```bash
-   npm publish
+   git tag v2.0.0
+   git push origin main --tags
    ```
 
-The package is configured to publish to the public npm registry.
+Users can then install the specific version:
+
+```bash
+npm install --save-dev dream-lab-ai/pam-eslint-config#v2.0.0
+```
 
 ---
 

@@ -18,6 +18,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --fix",
+    "format": "prettier --write .",
     "build": "exit"
   },
   "engines": {
@@ -44,5 +46,10 @@
     "eslint-plugin-testing-library": "^7.15.4",
     "eslint-plugin-vitest": "^0.5.4",
     "prettier": "^3.5.3"
+  },
+  "devDependencies": {
+    "@types/eslint": "^9.6.1",
+    "@types/node": "^25.0.3",
+    "typescript": "^5.9.3"
   }
 }

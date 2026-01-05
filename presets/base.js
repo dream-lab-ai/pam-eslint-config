@@ -5,9 +5,7 @@ const typescriptEslint = require('@typescript-eslint/eslint-plugin');
 const typescriptParser = require('@typescript-eslint/parser');
 const eslintConfigPrettier = require('eslint-config-prettier');
 
-const tsConfig = fs.existsSync('tsconfig.json')
-  ? path.resolve('tsconfig.json')
-  : undefined;
+const tsConfig = fs.existsSync('tsconfig.json') ? path.resolve('tsconfig.json') : undefined;
 
 module.exports = [
   // Base configuration for all files

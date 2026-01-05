@@ -23,9 +23,7 @@ function hasPackage(packageName) {
 }
 
 // Build the config array based on what's installed
-const configs = [
-  ...baseConfig,
-];
+const configs = [...baseConfig];
 
 // Add Vitest config if vitest is installed
 if (hasPackage('vitest')) {
@@ -35,7 +33,7 @@ if (hasPackage('vitest')) {
 // Add React configs if react is installed
 if (hasPackage('react')) {
   configs.push(...reactConfig);
-  
+
   // Add testing-library config if both react and testing-library are present
   if (hasPackage('@testing-library/react')) {
     configs.push(...testingLibraryConfig);
