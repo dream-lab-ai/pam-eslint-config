@@ -21,7 +21,8 @@
     "lint": "eslint . --fix",
     "format": "prettier --write .",
     "build": "exit",
-    "npm-audit": "npm audit"
+    "npm-audit": "npm audit",
+    "prepare": "husky"
   },
   "engines": {
     "node": ">=18"
@@ -51,6 +52,14 @@
   "devDependencies": {
     "@types/eslint": "^9.6.1",
     "@types/node": "^25.0.3",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "typescript": "^5.9.3"
+  },
+  "lint-staged": {
+    "*": [
+      "npm run lint",
+      "npm run format"
+    ]
   }
 }
