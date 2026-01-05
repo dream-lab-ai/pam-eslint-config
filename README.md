@@ -13,7 +13,7 @@
 - [Available Presets](#available-presets)
 - [Configuration Examples](#configuration-examples)
 - [Migration Guide](#migration-guide)
-- [Publishing](#publishing)
+- [Versioning](#versioning)
 
 ## Overview
 
@@ -27,7 +27,7 @@ This package provides Pam AI's ESLint configuration using the modern ESLint 9 fl
 
 ## Prerequisites
 
-**Node.js**: >=18 (tested on v22.14.0)
+**Node.js**: >=22 (tested on v22.14.0)
 
 **Required peer dependencies**:
 
@@ -35,17 +35,29 @@ This package provides Pam AI's ESLint configuration using the modern ESLint 9 fl
 
 ## Installation
 
-Install this package directly from GitHub as a `devDependency`:
+Add this package to your `package.json` as a `devDependency`:
 
-```bash
-npm install --save-dev github:dream-lab-ai/pam-eslint-config eslint
+```json
+{
+  "devDependencies": {
+    "@dream-lab-ai/pam-eslint-config": "github:dream-lab-ai/pam-eslint-config",
+    "eslint": "^9.0.0"
+  }
+}
 ```
 
-Or using a specific version/tag:
+Or reference a specific version/tag:
 
-```bash
-npm install --save-dev dream-lab-ai/pam-eslint-config#v2.0.0 eslint
+```json
+{
+  "devDependencies": {
+    "@dream-lab-ai/pam-eslint-config": "github:dream-lab-ai/pam-eslint-config#v2.0.0",
+    "eslint": "^9.0.0"
+  }
+}
 ```
+
+Then run `npm install`.
 
 ## Usage
 
@@ -278,26 +290,30 @@ module.exports = {
 };
 ```
 
-## Publishing This Package
+## Versioning
 
-This package is installed directly from GitHub. To release a new version:
+This is a public GitHub repository that is directly referenced by other projects. To create a new version:
 
 1. **Update version in `package.json`**
 2. **Commit your changes:**
    ```bash
    git add .
-   git commit -m "Release v2.0.0"
+   git commit -m "v2.1.0: Description of changes"
    ```
-3. **Create a git tag:**
+3. **Create a git tag (optional but recommended):**
    ```bash
-   git tag v2.0.0
+   git tag v2.1.0
    git push origin main --tags
    ```
 
-Users can then install the specific version:
+Projects reference this repo in their `package.json`:
 
-```bash
-npm install --save-dev dream-lab-ai/pam-eslint-config#v2.0.0
+```json
+{
+  "devDependencies": {
+    "@dream-lab-ai/pam-eslint-config": "github:dream-lab-ai/pam-eslint-config#v2.1.0"
+  }
+}
 ```
 
 ---
@@ -305,7 +321,7 @@ npm install --save-dev dream-lab-ai/pam-eslint-config#v2.0.0
 ## Package Information
 
 - **Version**: 2.0.0
-- **Node Version**: >=18 (tested on v22.14.0)
+- **Node Version**: >=22 (tested on v22.14.0)
 - **ESLint**: ^9.0.0
 - **License**: See repository
 

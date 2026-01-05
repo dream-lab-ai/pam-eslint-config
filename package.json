@@ -25,11 +25,7 @@
     "prepare": "husky"
   },
   "engines": {
-    "node": ">=18"
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org",
-    "access": "public"
+    "node": ">=22"
   },
   "peerDependencies": {
     "eslint": "^9.0.0"
