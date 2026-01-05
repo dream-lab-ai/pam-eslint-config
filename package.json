@@ -20,7 +20,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --fix",
     "format": "prettier --write .",
-    "build": "exit"
+    "build": "exit",
+    "npm-audit": "npm audit"
   },
   "engines": {
     "node": ">=18"
